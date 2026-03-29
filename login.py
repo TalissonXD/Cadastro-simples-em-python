@@ -3,10 +3,9 @@ class Usuario:
   def __init__(self, nome, senha):
     self.nome = nome
     self.senha = senha
-  def mostrar_infor(self):
-    usuario = input("Digite seu nome de usuario: ").upper()
+  def mostrar_infor(self, nome):
     senha = input("Digite a senha: ")
-    if usuario == self.nome and senha == self.senha:
+    if nome == self.nome and senha == self.senha:
       print("Acesso aceito")
       print("INFORMAÇÕES DE LOGIN")
       print(f"O usuario se chama {self.nome}")
@@ -58,7 +57,7 @@ def main():
         print("Nenhum usuario cadastrado")
       else:
         nome = input("Digite o nome do seu Usuario: ").upper()
-        usuarios[nome].mostrar_infor()
+        usuarios[nome].mostrar_infor(nome)
       print("-"*80)
     elif opcao == "4":
       if usuarios == {}:
